@@ -43,17 +43,17 @@ def create_data_loaders(args):
         from dataloaders.nyu_dataloader import NYUDataset
         if not args.evaluate:
             train_dataset = NYUDataset(traindir, type='train',
-                modality=args.modality, sparsifier=sparsifier)
+                modality=args.modality)
         val_dataset = NYUDataset(valdir, type='val',
-            modality=args.modality, sparsifier=sparsifier)
+            modality=args.modality)
 
     elif args.data == 'kitti':
         from dataloaders.kitti_dataloader import KITTIDataset
         if not args.evaluate:
             train_dataset = KITTIDataset(traindir, type='train',
-                modality=args.modality, sparsifier=sparsifier)
+                modality=args.modality)
         val_dataset = KITTIDataset(valdir, type='val',
-            modality=args.modality, sparsifier=sparsifier)
+            modality=args.modality)
 
     else:
         raise RuntimeError('Dataset not found.' +
